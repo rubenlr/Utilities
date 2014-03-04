@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D73DBA31-A929-4C8D-8771-9EE1512169F7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.Common</RootNamespace>
+    <AssemblyName>Utilities.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Libs\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\..\packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging">
+      <HintPath>..\..\packages\Ninject.Extensions.Logging.3.0.1.0\lib\net40\Ninject.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Logging.Log4Net">
+      <HintPath>..\..\packages\Ninject.Extensions.Logging.Log4net.3.0.1.0\lib\net40\Ninject.Extensions.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Collections\Generic\BlockCollection.cs" />
+    <Compile Include="Collections\Generic\BlockCollectionNotifier.cs" />
+    <Compile Include="Collections\Generic\Cache.cs" />
+    <Compile Include="Collections\Generic\CacheableCollectionHandler.cs" />
+    <Compile Include="Collections\Generic\CollectionHelper.cs" />
+    <Compile Include="Collections\Generic\ConcurrentSet.cs" />
+    <Compile Include="Collections\Generic\HashTableCached.cs" />
+    <Compile Include="Collections\Generic\IExpiredTimeSettings.cs" />
+    <Compile Include="Collections\Generic\QueueSynchronized.cs" />
+    <Compile Include="Concurrent\Interface\IRunner.cs" />
+    <Compile Include="Concurrent\Interface\IService.cs" />
+    <Compile Include="Concurrent\Interface\ISettingsRunnable.cs" />
+    <Compile Include="Concurrent\Service\ImportadorService.cs" />
+    <Compile Include="Concurrent\Service\Interface\IConsumerRunner.cs" />
+    <Compile Include="Concurrent\Service\Interface\IImportador.cs" />
+    <Compile Include="Concurrent\Service\Interface\IProducerRunner.cs" />
+    <Compile Include="Concurrent\Service\Interface\ISettingsProducerLimited.cs" />
+    <Compile Include="Concurrent\Service\RunAtOnceControl.cs" />
+    <Compile Include="Concurrent\Service\ServiceAbstraction.cs" />
+    <Compile Include="Concurrent\Service\ServiceControl.cs" />
+    <Compile Include="Concurrent\Service\ServiceRunner.cs" />
+    <Compile Include="Concurrent\Service\ServiceRunnerConsumer.cs" />
+    <Compile Include="Concurrent\Service\ServiceRunnerProducer.cs" />
+    <Compile Include="Concurrent\Service\ServiceRunnerProducerLimited.cs" />
+    <Compile Include="Concurrent\Service\SettingsRunnableDefault.cs" />
+    <Compile Include="Concurrent\TypeSyncronized.cs" />
+    <Compile Include="ConnectionString.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="DataTypes\CreditCard.cs" />
+    <Compile Include="Date\DateTimeDiff.cs" />
+    <Compile Include="Date\DateTimeProvider.cs" />
+    <Compile Include="Date\DateTimeUtil.cs" />
+    <Compile Include="Date\IDateTimeProvider.cs" />
+    <Compile Include="DocumentValidation.cs" />
+    <Compile Include="EnumerationUtils.cs" />
+    <Compile Include="Exceptions\CriptografiaException.cs" />
+    <Compile Include="Exceptions\S1MainException.cs" />
+    <Compile Include="ExtensionMethods\Extensions.cs" />
+    <Compile Include="INinjectKernelProvider.cs" />
+    <Compile Include="Ninject\ContextedFactory.cs" />
+    <Compile Include="Ninject\IContextedFactory.cs" />
+    <Compile Include="Ninject\IFactory.cs" />
+    <Compile Include="Ninject\Factory.cs" />
+    <Compile Include="Parser\FieldDescription.cs" />
+    <Compile Include="Parser\FieldDescriptionDelimited.cs" />
+    <Compile Include="Parser\FieldDescriptionFixedSize.cs" />
+    <Compile Include="Parser\FieldValue.cs" />
+    <Compile Include="Math\Porcentagem.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\CompleteStressRunner.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\CrudStressData.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\ISelectionStressable.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\SelectStressRunner.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\StressTestSettings.cs" />
+    <Compile Include="Performance\Cronometro.cs" />
+    <Compile Include="DataTypes\Periodo.cs" />
+    <Compile Include="FileUtils.cs" />
+    <Compile Include="Performance\Mensure\CronometroPerformance.cs" />
+    <Compile Include="Performance\DataGeneration\DataGenerationSettings.cs" />
+    <Compile Include="Performance\DataGeneration\Models\IDataAtualizacao.cs" />
+    <Compile Include="Performance\Mensure\LogPerformance.cs" />
+    <Compile Include="Partners\Singleton.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\ICrudDataHandleStressable.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\IDataGenerationProvider.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\CrudSetting.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\CrudStressRunner.cs" />
+    <Compile Include="Performance\Concurrent\StressTest\StressTestDataCollection.cs" />
+    <Compile Include="Performance\Concurrent\TaskManager.cs" />
+    <Compile Include="Performance\DataGeneration\Models\Cobranca.cs" />
+    <Compile Include="Performance\DataGeneration\CobrancaGeneration.cs" />
+    <Compile Include="Performance\DataGeneration\Models\Contrato.cs" />
+    <Compile Include="Performance\DataGeneration\ContratoGeneration.cs" />
+    <Compile Include="Performance\DataGeneration\Models\Parcela.cs" />
+    <Compile Include="Performance\DataGeneration\ParcelaGeneration.cs" />
+    <Compile Include="Performance\DataGeneration\PoolGeneration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="log4net\RollingOverWeekFileAppender.cs" />
+    <Compile Include="Querable\Enum\OperadorQuery.cs" />
+    <Compile Include="Querable\QuerableParamters.cs" />
+    <Compile Include="Security\AdvancedEncryptionStandard.cs" />
+    <Compile Include="Security\AesCryptography.cs" />
+    <Compile Include="Security\ICryptography.cs" />
+    <Compile Include="Security\ICryptographyKeyProvider.cs" />
+    <Compile Include="Security\Hashing.cs" />
+    <Compile Include="Security\IHashing.cs" />
+    <Compile Include="Settings\AppConfig.cs" />
+    <Compile Include="Settings\IAppConfig.cs" />
+    <Compile Include="Settings\MachineDependencySettings.cs" />
+    <Compile Include="Settings\SettingsUtilException.cs" />
+    <Compile Include="Test\Rand.cs" />
+    <Compile Include="TipoDocumento.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="log4net.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ParserOFX\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
